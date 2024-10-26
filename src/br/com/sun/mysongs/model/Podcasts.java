@@ -22,6 +22,29 @@ public class Podcasts extends Audio implements Ownerable {
     }
 
     public void showOwnerData(){
-        System.out.printf("Host: %s\n", host);
+        System.out.printf("%s is the podcast's owner!\n", host);
+    }
+
+    @Override
+    public void showInfo() {
+        System.out.printf("""
+                Host: %s
+                description: %s
+                likes: %d
+                Views: %d
+                
+                """, host, description, getLikes(), getTotalPlay());
+    }
+
+    @Override
+    public void actions() {
+        System.out.printf("""
+                        What you want to do with %s Podcast??
+                        1 - Play
+                        2 - Like
+                        3 - Information
+                        4 - Owner
+                        
+                        """, host);
     }
 }
