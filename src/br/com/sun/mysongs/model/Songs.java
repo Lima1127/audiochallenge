@@ -32,4 +32,17 @@ public class Songs extends Audio implements Ownerable {
     public void showOwnerData(){
         System.out.printf("Host: %s\n", artist);
     }
+
+
+    @Override
+    public void actions() {
+        System.out.printf("""
+                        What you want to do with the song %s?
+                        1 - Play
+                        2 - Like
+                        3 - Information
+                        4 - Owner
+                        
+                        """, getTitle());
+    }
 }

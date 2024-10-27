@@ -65,8 +65,37 @@ public class Main {
                     podcasts.like();
                 } else if (actionOption == 3) {
                     podcasts.showInfo();
+                } else if (actionOption == 4) {
+                    podcasts.showOwnerData();
                 } else {
                     System.out.println("Invalid Information.");
+                }
+
+            } else if (initialOption == 3) {
+                String songTitle = songs.getTitle();
+                String albumName = songs.getAlbum();
+                String artistName = songs.getArtist();
+                String genreType = songs.getGenre();
+
+                if (songTitle == null){
+                    System.out.println("What's the song's name?");
+                    sc.nextLine();
+                    songs.setTitle(sc.nextLine());
+                }
+                if (albumName == null){
+                    System.out.println("What's the album's name?");
+                    sc.nextLine();
+                    songs.setAlbum(sc.nextLine());
+                }
+                if (artistName == null){
+                    System.out.println("What's the artist of this song?");
+                    sc.nextLine();
+                    songs.setArtist(sc.nextLine());
+                }
+                if (genreType == null){
+                    System.out.println("What's the genre of this song?");
+                    sc.nextLine();
+                    songs.setGenre(sc.nextLine());
                 }
 
 
