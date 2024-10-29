@@ -11,10 +11,11 @@ public class Main {
         Songs songs = new Songs();
         Audio audio = new Audio();
         boolean loop = true;
+        System.out.println(" Welcome!");
 
         while (loop){
             System.out.println("""
-                    Welcome!
+                    
                     What service you want to access?
                     1 - Audios
                     2 - Podcasts
@@ -52,8 +53,8 @@ public class Main {
                 }
                 if (podcastDescription == null){
                     System.out.println("What's the Podcast's description?");
-                    sc.nextLine();
                     podcasts.setDescription(sc.nextLine());
+
                 }
 
                 podcasts.actions();
@@ -81,28 +82,46 @@ public class Main {
                     System.out.println("What's the song's name?");
                     sc.nextLine();
                     songs.setTitle(sc.nextLine());
+
                 }
                 if (albumName == null){
                     System.out.println("What's the album's name?");
-                    sc.nextLine();
                     songs.setAlbum(sc.nextLine());
+
                 }
                 if (artistName == null){
                     System.out.println("What's the artist of this song?");
-                    sc.nextLine();
                     songs.setArtist(sc.nextLine());
+
                 }
                 if (genreType == null){
                     System.out.println("What's the genre of this song?");
-                    sc.nextLine();
                     songs.setGenre(sc.nextLine());
+
                 }
+                songs.actions();
 
+                int actionOption = sc.nextInt();
 
+                if (actionOption == 1){
+                    songs.play();
+                } else if (actionOption == 2) {
+                    songs.like();
+                } else if (actionOption == 3) {
+                    songs.showInfo();
+                } else if (actionOption == 4) {
+                    songs.showOwnerData();
+                } else {
+                    System.out.println("Invalid Information.");
+                }
+            } else if (initialOption == 4) {
+                System.out.println("Come back soon!");
+                loop = false;
+            } else {
+                System.out.println("Invalid option!");
             }
 
         }
-        System.out.println("");
 
     }
 }

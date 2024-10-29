@@ -32,6 +32,7 @@ public class Audio {
 
     public void actions(){
         System.out.printf("""
+                        
                         What you want to do with %s Audio?
                         1 - Play
                         2 - Like
@@ -42,12 +43,12 @@ public class Audio {
 
     public void like(){
         likes++;
-        System.out.println("Audio liked.");
+        System.out.println("Liked.");
     }
 
     public void play(){
         totalPlay++;
-        System.out.println("Playing audio.");
+        System.out.println("Playing...");
     }
 
 }
