@@ -35,7 +35,7 @@ public class Songs extends Audio implements Ownerable {
 
 
     @Override
-    public void actions() {
+    public void displayActionsOptions() {
         System.out.printf("""
                         
                         What you want to do with the song %s?

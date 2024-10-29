@@ -30,7 +30,7 @@ public class Audio {
                 """, title, likes, totalPlay);
     }
 
-    public void actions(){
+    public void displayActionsOptions(){
         System.out.printf("""
                         
                         What you want to do with %s Audio?

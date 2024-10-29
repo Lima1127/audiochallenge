@@ -16,22 +16,22 @@ public class Main {
         while (loop){
             System.out.println("""
                     
-                    What service you want to access?
+                    What kind of service do you want to access?
                     1 - Audios
                     2 - Podcasts
                     3 - Songs
                     4 - Exit
                     
                     """);
-            int initialOption = sc.nextInt();
-            if (initialOption == 1){
+            int serviceOption = sc.nextInt();
+            if (serviceOption == 1){
                 String audioTitle = audio.getTitle();
                 if (audioTitle == null){
                     System.out.println("What's the audio's title?");
                     sc.nextLine();
                     audio.setTitle(sc.nextLine());
                 }
-                audio.actions();
+                audio.displayActionsOptions();
                 int actionOption = sc.nextInt();
                 if (actionOption == 1){
                     audio.play();
@@ -43,7 +43,7 @@ public class Main {
                     System.out.println("Invalid Information.");
                 }
 
-            } else if (initialOption == 2) {
+            } else if (serviceOption == 2) {
                 String podcastTitle = podcasts.getHost();
                 String podcastDescription = podcasts.getDescription();
                 if (podcastTitle == null){
@@ -57,7 +57,7 @@ public class Main {
 
                 }
 
-                podcasts.actions();
+                podcasts.displayActionsOptions();
                 int actionOption = sc.nextInt();
 
                 if (actionOption == 1){
@@ -72,7 +72,7 @@ public class Main {
                     System.out.println("Invalid Information.");
                 }
 
-            } else if (initialOption == 3) {
+            } else if (serviceOption == 3) {
                 String songTitle = songs.getTitle();
                 String albumName = songs.getAlbum();
                 String artistName = songs.getArtist();
@@ -99,7 +99,7 @@ public class Main {
                     songs.setGenre(sc.nextLine());
 
                 }
-                songs.actions();
+                songs.displayActionsOptions();
 
                 int actionOption = sc.nextInt();
 
@@ -114,7 +114,7 @@ public class Main {
                 } else {
                     System.out.println("Invalid Information.");
                 }
-            } else if (initialOption == 4) {
+            } else if (serviceOption == 4) {
                 System.out.println("Come back soon!");
                 loop = false;
             } else {

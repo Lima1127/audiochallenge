@@ -38,7 +38,7 @@ public class Podcasts extends Audio implements Ownerable {
     }
 
     @Override
-    public void actions() {
+    public void displayActionsOptions() {
         System.out.printf("""
                         What you want to do with %s Podcast??
                         1 - Play
